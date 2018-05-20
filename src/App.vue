@@ -1,11 +1,19 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <v-app>
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      app></v-navigation-drawer>
+    <v-toolbar app>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    </v-toolbar>
+    <v-content>
+      <v-container fluid>
+        <router-view/>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <style>
