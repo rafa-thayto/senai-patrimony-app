@@ -1,12 +1,12 @@
 <template>
-  <!-- <div>
+  <div>
 
-    <v-container>
-    </v-container>
-    <v-card flat>
-      <Header title="Home"/>
-      <v-layout row pb-2>
-        <v-flex xs8 offset-xs2>
+    <!-- <v-container>
+    </v-container> -->
+    <!-- <v-card flat> -->
+      <Header :title="title"/>
+      <!-- <v-layout row pb-2> -->
+        <!-- <v-flex xs8 offset-xs2>
           <v-card class="card--flex-toolbar">
             <v-toolbar card prominent>
               <v-toolbar-title class="body-2 grey--text">Title</v-toolbar-title>
@@ -27,11 +27,22 @@
             </v-card-text>
 
           </v-card>
+        </v-flex> -->
+      <!-- </v-layout> -->
+    <!-- </v-card> -->
+      <v-layout row>
+        <v-flex sm8 class="d-none">
+          colocar imagem
+        </v-flex>
+        <v-flex xs12 sm4>
+          <v-card dark color="deep-purple darken-1">
+            <v-container class="pl-5 pr-5">
+              <Login />
+            </v-container>
+          </v-card>
         </v-flex>
       </v-layout>
-    </v-card>
-  </div> -->
-  <div></div>
+  </div>
 </template>
 
 <script>
@@ -40,10 +51,15 @@ import Login from '@/components/Login.vue'
 import Header from '@/components/Header.vue'
 
 export default {
-  name: 'home',
+  name: 'main',
   components: {
     Header,
     Login
+  },
+  data () {
+    return {
+      title: 'Main'
+    }
   }
 }
 </script>
@@ -51,5 +67,10 @@ export default {
 <style>
   .card--flex-toolbar {
     margin-top: -64px;
+  }
+  @media screen and (max-width: 599.99px) {
+    .d-none {
+      display: none;
+    }
   }
 </style>

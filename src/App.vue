@@ -1,17 +1,15 @@
 <template>
   <v-app>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       fixed
       app></v-navigation-drawer>
     <v-toolbar app>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </v-toolbar>
+    </v-toolbar> -->
     <v-content>
-      <v-container fluid>
-        <router-view/>
-      </v-container>
+          <router-view/>
     </v-content>
   </v-app>
 </template>
