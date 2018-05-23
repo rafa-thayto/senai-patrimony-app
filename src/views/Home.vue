@@ -1,49 +1,17 @@
 <template>
-  <!-- <div>
-
-    <v-container>
-    </v-container>
-    <v-card flat>
-      <Header title="Home"/>
-      <v-layout row pb-2>
-        <v-flex xs8 offset-xs2>
-          <v-card class="card--flex-toolbar">
-            <v-toolbar card prominent>
-              <v-toolbar-title class="body-2 grey--text">Title</v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon>search</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon>apps</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon>more_vert</v-icon>
-              </v-btn>
-            </v-toolbar>
-            <v-divider></v-divider>
-            <v-card-text style="height: calc(100%);">
-              <Login />
-            </v-card-text>
-
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-card>
-  </div> -->
   <div></div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Login from '@/components/Login.vue'
+import Signin from '@/components/Signin.vue'
 import Header from '@/components/Header.vue'
 
 export default {
   name: 'home',
   components: {
     Header,
-    Login
+    Signin
   }
 }
 </script>

@@ -4,7 +4,12 @@
     <!-- <v-container>
     </v-container> -->
     <!-- <v-card flat> -->
-      <Header :title="title"/>
+      <v-toolbar dark color="primary" flat extended>
+        <v-toolbar-side-icon></v-toolbar-side-icon>
+        <v-toolbar-title>{{ title }}</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <a style="color: white"><h1>Não tem conta ainda?</h1></a>
+      </v-toolbar>
       <!-- <v-layout row pb-2> -->
         <!-- <v-flex xs8 offset-xs2>
           <v-card class="card--flex-toolbar">
@@ -23,38 +28,40 @@
             </v-toolbar>
             <v-divider></v-divider>
             <v-card-text style="height: calc(100%);">
-              <Login />
+              <Signin />
             </v-card-text>
 
           </v-card>
         </v-flex> -->
       <!-- </v-layout> -->
     <!-- </v-card> -->
+    <v-container>
       <v-layout row>
-        <v-flex sm8 class="d-none">
-          colocar imagem
-        </v-flex>
-        <v-flex xs12 sm4>
-          <v-card dark color="deep-purple darken-1">
-            <v-container class="pl-5 pr-5">
-              <Login />
-            </v-container>
+        <v-flex xs12 sm6 offset-sm3>
+          <v-card class="card--flex-toolbar">
+            <v-card-text style="height: 100%;">
+              <v-container>
+                <Signin />
+              </v-container>
+            </v-card-text>
           </v-card>
         </v-flex>
       </v-layout>
+    </v-container>
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Login from '@/components/Login.vue'
+import Signin from '@/components/Signin.vue'
 import Header from '@/components/Header.vue'
 
 export default {
   name: 'main',
   components: {
     Header,
-    Login
+    Signin
   },
   data () {
     return {

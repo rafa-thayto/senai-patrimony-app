@@ -3,30 +3,42 @@
 
     <form>
       <!-- Email -->
-      <v-text-field
-        v-model="email"
-        label="E-mail"
-        :error-messages="emailErrors"
-        required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-      ></v-text-field>
+      <v-layout row>
+        <v-flex xs12>
+          <v-text-field
+            v-model="email"
+            label="E-mail"
+            :error-messages="emailErrors"
+            required
+            @input="$v.email.$touch()"
+            @blur="$v.email.$touch()"
+          ></v-text-field>
+        </v-flex>
+      </v-layout>
       <!-- Password -->
-      <v-text-field
-        v-model="password"
-        label="Senha"
-        :append-icon="passwordNotVisible ? 'visibility' : 'visibility_off'"
-        :append-icon-cb="() => (passwordNotVisible = !passwordNotVisible)"
-        :error-messages="passwordErrors"
-        :counter="20"
-        :type="passwordNotVisible ? 'password' : 'text'"
-        required
-        min="6"
-        @input="$v.password.$touch()"
-        @blur="$v.password.$touch()"
-      ></v-text-field>
-
-      <v-btn @click="submit">submit</v-btn>
+      <v-layout row>
+        <v-flex xs12>
+          <v-text-field
+            v-model="password"
+            label="Senha"
+            :append-icon="passwordNotVisible ? 'visibility' : 'visibility_off'"
+            :append-icon-cb="() => (passwordNotVisible = !passwordNotVisible)"
+            :error-messages="passwordErrors"
+            :counter="20"
+            :type="passwordNotVisible ? 'password' : 'text'"
+            required
+            min="6"
+            @input="$v.password.$touch()"
+            @blur="$v.password.$touch()"
+          ></v-text-field>
+        </v-flex>
+      </v-layout>
+      <!-- Submit button -->
+      <v-layout row>
+        <v-flex xs12>
+          <v-btn @click="submit">Entrar</v-btn>
+        </v-flex>
+      </v-layout>
     </form>
 
   </v-content>
@@ -38,7 +50,7 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
 
 export default {
   mixins: [validationMixin],
-  name: 'login',
+  name: 'signin',
   validations: {
     email: { required, email },
     password: { required, maxLength: maxLength(20) }
